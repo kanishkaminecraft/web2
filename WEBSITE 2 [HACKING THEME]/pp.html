@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width: 768px) {
+            /* Styles for screens 768px wide or smaller */
+            }
+        body {
+            background-color: black;
+            font-family: "Courier New", monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: lime;
+            text-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime;
+        }
+        body {
+          margin: 0;
+          overflow: hidden;
+          background-color: black;
+      }
+      
+      @font-face {
+          font-family: 'Origin Tech';
+          src: url('font.ttf') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+      }
+      
+      #navigation {
+          position: absolute;
+          top: 10px;
+          left: 0;
+          width: 100%;
+          height: 50px;
+          background-color: rgba(255, 255, 255, 0.2);
+          backdrop-filter: blur(10px);
+          border-radius: 20px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          pointer-events: none;
+          z-index: 2;
+          font-family: 'Origin Tech', sans-serif;
+      }
+      
+      .nav-button {
+          background-color: transparent;
+          color: white;
+          padding: 5px 20px;
+          border: 1px solid lime(255, 255, 255, 0.2);
+          border-radius: 20px;
+          cursor: pointer;
+          transition: background-color 0.3s, color 0.3s;
+          pointer-events: auto;
+          font-family: 'Origin Tech', sans-serif;
+          text-decoration: none; /* Add this line */
+      }
+      
+      .nav-button:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+          border: 1px solid white;
+      }
+      
+      canvas {
+          position: absolute;
+          top: 60px;
+          z-index: 0;
+      }
+    </style>
+</head>
+<body>
+    <div id="navigation">
+        <a href="web.html" class="nav-button">HOME</a>
+        <a href="policy.html" class="nav-button">POLICY</a>
+        <a href="https://discord.gg/gRRNTJnKcB" class="nav-button">DISCORD</a>
+    </div>
+    <pre id="text"><b></b><span id="cursor">|</span></pre><br>
+    <script>
+        var i = 0;
+        var txt = `
+        [ ABOUT THE CREATOR ]
+Hey there, I'm Aayan from India.
+I'm really passionate about ethical hacking and gaming.
+You know, I've been exploring the fascinating world of ethical hacking,
+And it's been an incredible journey so far.
+
+[ ABOUT MY HACKING TOOL ]
+One of the coolest things I've done is create a hacking tool that simplifies some aspects of hacking.
+Now, before you jump to conclusions, let me clarify something important:
+I believe in responsible hacking.
+My tool is designed to assist and educate,
+not to encourage any malicious activities.
+It's like a learning aid for budding ethical hackers.
+
+[ + ] MY GOAL
+My dream is to make ethical hacking more accessible in India.
+I want everyone to have the opportunity to learn about this field,
+but with the emphasis on ethics and responsibility.
+Hacking shouldn't be about causing harm or chaos.
+It should be a skill used for good.
+So, my mission is to empower individuals with knowledge
+and skills so that they don't have to rely solely on tools.
+Hacking, at its core,
+is about understanding systems,
+identifying vulnerabilities, and finding solutions.
+My tool is just a stepping stone to help people grasp
+these concepts and develop the skills they need.
+I truly believe that with the right guidance
+and a strong ethical foundation,
+we can create a community of responsible hackers in India
+who use their skills to enhance cybersecurity and protect
+against threats. After all, knowledge is power,
+and with great power comes great responsibility.
+
+JAI HIND
+JAI SHREE KRISHNA🙏
+
+         |        ____    _    _ ____      ____   ____  ____
+       __|__   |____|    |  / |____     |____  |____ |
+      |__|_    |    |     V    ____|     ____| |____ |____ URITY
+      ___|_|
+         |
+`;
+        var speed = 50;
+        function typeWriter() {
+            if (i < txt.length) {
+                document.getElementById("text").innerHTML = txt.substring(0, i+1) + '<span id="cursor">|</span>';
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        }
+        typeWriter();
+    </script>
+</body> 
+</html>

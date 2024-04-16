@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Main Page</title>
+<!-- Combined CSS styles -->
+<style>
+  body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: Arial, sans-serif; /* From j.html */
+  }
+
+  #navigation {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none;
+    z-index: 2;
+    font-family: 'Origin Tech', sans-serif; /* From data.html */
+  }
+
+  .nav-button {
+    background-color: transparent;
+    color: white;
+    padding: 5px 20px;
+    border: 1px solid lime(255, 255, 255, 0.2);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    pointer-events: auto;
+    font-family: 'Origin Tech', sans-serif; /* From data.html */
+    text-decoration: none;
+  }
+
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+  }
+
+  .menu-btn {
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Adjust positioning */
+    z-index: 3; /* Ensure the three-bars button is above the navigation bar */
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px; /* Adjust according to your navbar height */
+    right: -250px;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    transition: right 0.3s ease;
+    z-index: 1; /* Ensure the menu is behind the navigation bar */
+  }
+
+  .menu-btn {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-btn:hover {
+    background-color: #555;
+  }
+
+  .menu-btn.dots {
+    text-align: center;
+    font-size: 30px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navigation from data.html -->
+<div id="navigation">
+    <a href="pp.html" class="nav-button">CREDITS</a>
+    <a href="policy.html" class="nav-button">POLICY</a>
+    <a href="https://discord.gg/gRRNTJnKcB" class="nav-button">DISCORD</a>
+</div>
+
+<!-- Menu from j.html -->
+<div id="menu" class="menu">
+  <div class="menu-btn dots">≡</div>
+  <div class="menu-btn">Settings</div>
+  <div class="menu-btn" style="margin-top: 10px;">Account</div>
+  <div class="menu-btn" style="margin-top: 10px;">Info</div>
+</div>
+
+<!-- Three-bars button -->
+<div class="menu-btn" onclick="toggleMenu()">≡</div>
+
+<!-- Your main content here -->
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    if (menu.style.right === "-250px") {
+      menu.style.right = "0";
+    } else {
+      menu.style.right = "-250px";
+    }
+  }
+</script>
+
+</body>
+</html>
